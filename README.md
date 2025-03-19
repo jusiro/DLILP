@@ -1,9 +1,8 @@
 ## Disentangled Language-Image-Label Pre-training
 
-<img src="./local_data/media/dlilp_overview.png" width = "800" alt="" align=center /> <br/>
+<img src="./local_data/media/dlilp_overview.png" width = "750" alt="" align=center /> <br/>
 
-<b>A Reality Check of Vision-Language Pre-training in Radiology:</b> <br/>
-<b>Have We Progressed Using Text?</b> <br/>
+<b>A Reality Check of Vision-Language Pre-training in Radiology: Have We Progressed Using Text?</b> <br/>
 📜 <span style="color:red">*Information Processing in Medical Imaging*</span> \
 [Julio Silva-Rodríguez](https://scholar.google.es/citations?user=1UMYgHMAAAAJ&hl),
 [Jose Dolz](https://scholar.google.es/citations?user=yHQIFFMAAAAJ&hl),
