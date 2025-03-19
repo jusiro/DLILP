@@ -34,7 +34,7 @@ conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=
 ```
 
 ```
-git clone https://github.com/******/DLILP.git
+git clone https://github.com/jusiro/DLILP.git
 cd DLILP
 pip install -r requirements.txt
 ```
