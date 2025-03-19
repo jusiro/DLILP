@@ -4,7 +4,7 @@
 
 <b>A Reality Check of Vision-Language Pre-training in Radiology:</b> <br/>
 <b>Have We Progressed Using Text?</b> <br/>
-📜 <span style="color:red">*Inf. Conference on Information Processing in Medical Imaging*</span> \
+📜 <span style="color:red">*Information Processing in Medical Imaging*</span> \
 [Julio Silva-Rodríguez](https://scholar.google.es/citations?user=1UMYgHMAAAAJ&hl),
 [Jose Dolz](https://scholar.google.es/citations?user=yHQIFFMAAAAJ&hl),
 [Ismail Ben Ayed](https://scholar.google.es/citations?user=29vyUccAAAAJ&hl)
@@ -129,7 +129,7 @@ If you find this repository useful, please consider citing this paper:
 @inproceedings{dlilp,
     title={A Reality Check of Vision-Language Pre-training in Radiology: Have We Progressed Using Text?},
     author={Julio Silva-Rodríguez and Jose Dolz and Ismail {Ben Ayed}},
-    booktitle={Information Processing on Medical Imaging (IPMI)},
+    booktitle={Information Processing in Medical Imaging (IPMI)},
     year={2025}
 }
 ```
