@@ -1,0 +1,12 @@
+numpy
+scikit-learn
+torchvision
+tqdm
+pandas
+pillow
+kornia
+pydicom
+python-gdcm
+omegaconf
+pytorch-lightning
+transformers
