@@ -151,7 +151,12 @@ class VLMModel(torch.nn.Module):
                     state_dict[key.replace("resnet.", "vision_model.model.")] = state_dict.pop(key)
             strict = False
         else:
+            # Load state dict weights
             state_dict = torch.load(weights_path)
+            # Fix for version change in bioclinicalbert
+            flag_version_removed = "text_model.model.embeddings.position_ids"
+            if flag_version_removed in list(state_dict.keys()):
+                state_dict.pop(flag_version_removed)
             strict = True
 
         if self.learning_criteria == "unimodal":

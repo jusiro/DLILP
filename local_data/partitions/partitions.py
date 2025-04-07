@@ -132,9 +132,9 @@ def prepare_padchest_partition_pretrain():
 
     # Save dataframe
     if only_frontal:
-        df.to_csv("./pretraining/PadChest-train-frontal.csv")
+        df.to_csv("./local_data/partitions/pretraining/PadChest-train-frontal.csv")
     else:
-        df.to_csv("./pretraining/PadChest-train.csv")
+        df.to_csv("./local_data/partitions/pretraining/PadChest-train.csv")
 
 
 def prepare_mimic_partition_pretrain():
@@ -148,7 +148,7 @@ def prepare_mimic_partition_pretrain():
                   'Pleural Other', 'Fracture', 'Support Devices']
 
     table_labels_sentences = pd.read_csv(PATH_DATASETS + "MIMIC-CXR-2/2.0.0/" + "labels_individual_sentences.csv")
-    table_test = pd.read_csv("./transferability/mimic_5x200.csv")
+    table_test = pd.read_csv("./local_data/partitions/transferability/mimic_5x200.csv")
     table_partitions = pd.read_csv(PATH_DATASETS + "MIMIC-CXR-2/2.0.0/" + "mimic-cxr-2.0.0-split.csv")
     table_metadata = pd.read_csv(PATH_DATASETS + "MIMIC-CXR-2/2.0.0/" + "mimic-cxr-2.0.0-metadata.csv")
 
@@ -200,9 +200,9 @@ def prepare_mimic_partition_pretrain():
 
     # Save dataframe
     if only_frontal:
-        df.to_csv("./pretraining/MIMIC-CXR-2-train-frontal.csv")
+        df.to_csv("./local_data/partitions/pretraining/MIMIC-CXR-2-train-frontal.csv")
     else:
-        df.to_csv("./pretraining/MIMIC-CXR-2-train.csv")
+        df.to_csv("./local_data/partitions/pretraining/MIMIC-CXR-2-train.csv")
 
 
 def prepare_chexpert_partition_pretrain():
@@ -218,7 +218,7 @@ def prepare_chexpert_partition_pretrain():
     # Train partition
     table_train = pd.read_csv(PATH_DATASETS + "CheXpert/" + "train_visualCheXbert.csv")
     # Test partition
-    table_test = pd.read_csv("./transferability/chexpert_5x200.csv")
+    table_test = pd.read_csv("./local_data/partitions/transferability/chexpert_5x200.csv")
 
     # Remove testing subjects from train subset
     subjects = [id.split("/")[2] for id in table_train["Path"].to_list()]
@@ -251,9 +251,9 @@ def prepare_chexpert_partition_pretrain():
 
     # Save dataframe
     if only_frontal:
-        df.to_csv("./pretraining/CheXpert-train-frontal.csv")
+        df.to_csv("./local_data/partitions/pretraining/CheXpert-train-frontal.csv")
     else:
-        df.to_csv("./pretraining/CheXpert-train.csv")
+        df.to_csv("./local_data/partitions/pretraining/CheXpert-train.csv")
 
 # % ----------------------
 # TRANSFERABILITY DATASETS
@@ -278,7 +278,7 @@ def prepare_nih_lt_partition():
     df = df.rename(columns={'id': 'Path', 'Pleural_Thickening': 'Pleural Thickening'})
     # Images Path
     df["Path"] = ["images/" + iFile for iFile in df["Path"].to_list()]
-    df.to_csv("./transferability/nih_train.csv")
+    df.to_csv("./local_data/partitions/transferability/nih_train.csv")
 
     # Prepare training data
     df = df_test
@@ -286,7 +286,7 @@ def prepare_nih_lt_partition():
     df = df.rename(columns={'id': 'Path', 'Pleural_Thickening': 'Pleural Thickening'})
     # Prepare test data
     df["Path"] = ["images/" + iFile for iFile in df["Path"].to_list()]
-    df.to_csv("./transferability/nih_test.csv")
+    df.to_csv("./local_data/partitions/transferability/nih_test.csv")
 
 
 def prepare_rsna_pneumonia_partition():
@@ -296,6 +296,14 @@ def prepare_rsna_pneumonia_partition():
     df = pd.read_csv(PATH_DATASETS + "RSNA_PNEUMONIA/" + "stage_2_detailed_class_info.csv")
 
     # create labels
+    """
+    "Lung Opacity (bounding box) - a finding on chest radiograph that in a patient with cough and fever has a high 
+    likelihood of being pneumonia"
+    From the challenge organizers: "In the cases labeled Not Normal/No Lung Opacity, no lung opacity refers to no 
+    opacity suspicious for pneumonia. Other non-pneumonia opacities may be present. Also, some of the not normal cases
+    have subtle abnormalities which require a trained eye to discern. (Which, for now, keeps radiologists around.)"
+    """
+
     df["Normal"] = df["class"].apply(lambda x: 1 if x == "Normal" else 0)
     df["Pneumonia"] = df["class"].apply(lambda x: 1 if x == "Lung Opacity" else 0)
     df = df[(df["Normal"].values + df["Pneumonia"].values) == 1]
@@ -318,8 +326,8 @@ def prepare_rsna_pneumonia_partition():
     train_df = train_df.reset_index()
     test_val_df = test_val_df.reset_index()
 
-    train_df.to_csv("./transferability/RSNA_train.csv")
-    test_val_df.to_csv("./transferability/RSNA_test.csv")
+    train_df.to_csv("./local_data/partitions/transferability/RSNA_train.csv")
+    test_val_df.to_csv("./local_data/partitions/transferability/RSNA_test.csv")
 
 
 def prepare_rsna_pneumonia_partition_gloria():
@@ -367,8 +375,8 @@ def prepare_rsna_pneumonia_partition_gloria():
     # split data
     train_df, test_val_df = train_test_split(df, test_size=0.3, random_state=0)
 
-    train_df.to_csv("./transferability/RSNA_gloria_train.csv")
-    test_val_df.to_csv("./transferability/RSNA_gloria_test.csv")
+    train_df.to_csv("./local_data/partitions/transferability/RSNA_gloria_train.csv")
+    test_val_df.to_csv("./local_data/partitions/transferability/RSNA_gloria_test.csv")
 
 
 def prepare_covid_partition():
@@ -405,7 +413,7 @@ def prepare_covid_partition():
     df = pd.DataFrame(list(zip(files_covid_test + files_normal_test + files_pneumonia_test + files_opacities_test,
                                labels_covid, labels_no_covid, labels_pneumonia, labels_opacities)),
                       columns=['Path', 'COVID', 'Normal', 'Pneumonia', 'Lung Opacity'])
-    df.to_csv("./transferability/covid_test.csv")
+    df.to_csv("./local_data/partitions/transferability/covid_test.csv")
 
     # Train partition
     files_covid_train = files_covid[n_covid_test:n_covid_test+n_covid_train]
@@ -422,7 +430,7 @@ def prepare_covid_partition():
     df = pd.DataFrame(list(zip(files_covid_train + files_normal_train + files_pneumonia_train + files_opacities_train,
                                labels_covid, labels_no_covid, labels_pneumonia, labels_opacities)),
                       columns=['Path', 'COVID', 'Normal', 'Pneumonia', 'Lung Opacity'])
-    df.to_csv("./transferability/covid_train.csv")
+    df.to_csv("./local_data/partitions/transferability/covid_train.csv")
 
 
 def prepare_siim_pneumothorax_partition():
@@ -466,8 +474,8 @@ def prepare_siim_pneumothorax_partition():
     print(f"Number of test samples: {len(test_df)}")
     print(test_df["Pneumothorax"].value_counts())
 
-    train_df.to_csv("./transferability/SIIM_train.csv")
-    test_df.to_csv("./transferability/SIIM_test.csv")
+    train_df.to_csv("./local_data/partitions/transferability/SIIM_train.csv")
+    test_df.to_csv("./local_data/partitions/transferability/SIIM_test.csv")
 
 
 def prepare_vindr_partition():
@@ -515,7 +523,7 @@ def prepare_vindr_partition():
     # Rename column
     df = df.rename(columns={'No finding': 'No Finding'})
     # Save dataframe
-    df.to_csv("./transferability/vindr_train.csv")
+    df.to_csv("./local_data/partitions/transferability/vindr_train.csv")
 
     df = df_test
     # Filter samples with more than one annotated category
@@ -531,7 +539,7 @@ def prepare_vindr_partition():
     # Rename column
     df = df.rename(columns={'No finding': 'No Finding'})
     # Save dataframe
-    df.to_csv("./transferability/vindr_test.csv")
+    df.to_csv("./local_data/partitions/transferability/vindr_test.csv")
 
 
 def preprocess_mimic_5x200_data():
@@ -591,26 +599,35 @@ def preprocess_mimic_5x200_data():
     df_200 = df_200.reset_index()
 
     # Save dataframe
-    df_200.to_csv("./transferability/mimic_5x200.csv")
+    df_200.to_csv("./local_data/partitions/transferability/mimic_5x200.csv")
 
 
-def main():
+def main(create_pretraining=False):
+
+    # Create folders
+    if not os.path.isdir("./local_data/partitions/pretraining/"):
+        os.makedirs("./local_data/partitions/pretraining/")
+    if not os.path.isdir("./local_data/partitions/transferability/"):
+        os.makedirs("./local_data/partitions/transferability/")
 
     # 1. Create MIMIC200x5 partition.
     print("Creating MIMIC5x200...")
     preprocess_mimic_5x200_data()
 
     # 2. Create MIMIC pre-training partition
-    print("Creating MIMIC pre-training partition...")
-    prepare_mimic_partition_pretrain()
+    if create_pretraining:
+        print("Creating MIMIC pre-training partition...")
+        prepare_mimic_partition_pretrain()
 
     # 3. Create CheXpert pretraining partition
-    print("Creating CheXpert pre-training partition...")
-    prepare_chexpert_partition_pretrain()
+    if create_pretraining:
+        print("Creating CheXpert pre-training partition...")
+        prepare_chexpert_partition_pretrain()
 
     # 4. Create PadChest partition
-    print("Creating PadChest partition...")
-    prepare_padchest_partition_pretrain()
+    if create_pretraining:
+        print("Creating PadChest partition...")
+        prepare_padchest_partition_pretrain()
 
     # 5. Create RSNA partition
     print("Creating RSNA partition...")

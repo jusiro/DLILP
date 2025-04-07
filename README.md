@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 1. **Download datasets**. Please, check [`./local_data/datasets/README.md`](./local_data/datasets/README.md) for expected datasets structure, links, and instructions.
 2. Define the **relative paths for datasets** in [`./local_data/constants.py`](./local_data/constants.py).
-3. Create dataset **partitions** for pre-training and transferability. Follow the instructions at [`./local_data/partitions/README.md`](./local_data/partitions/README.md).
+3. Create dataset **partitions** for pre-training and transferability. Follow the instructions at [`./local_data/partitions/README.md`](./local_data/partitions/README.md), and execute `python ./local_data/partitions/partitions.py`.
 
 ### Model pre-training
 

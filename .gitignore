@@ -1,0 +1,7 @@
+.idea/
+.local_data/results/
+.local_data/partitions/transferability/
+.local_data/partitions/pretraining/
+.cxrvlms/modeling/pretrained_weights/
+__pycache__/
+.git/

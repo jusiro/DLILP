@@ -4,6 +4,8 @@ Main function to transfer pretrained CXR VLMs model.
 """
 
 import argparse
+import os
+
 import torch
 
 from cxrvlms.modeling.model import VLMModel
@@ -48,6 +50,10 @@ def generate_experiment_id(args):
 
 def process(args):
 
+    # Create results folder
+    if not os.path.isdir('./local_data/results/transferability/'):
+        os.makedirs('./local_data/results/transferability/')
+
     # KFold cross-validation
     args.metrics_test, args.metrics_external, args.weights = [], [[] for i in range(len(args.experiment_test))], []
     for iFold in range(args.folds):
@@ -72,7 +78,7 @@ def process(args):
                                              batch_size=args.batch_size, num_workers=args.num_workers, seed=iFold,
                                              size=args.size)
 
-        # For two-head approach, select unimodal head for base classes
+        # For two-head approach, select unimodal head for base classes - otherwise, use textual projection
         if args.learning_criteria == "dlilp":
             if "new" not in args.experiment:
                 model.logit_scale = model.logit_scale_head2

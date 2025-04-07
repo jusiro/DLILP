@@ -65,6 +65,16 @@ def get_experiment_setting(experiment):
                    "targets": ["Normal", "COVID"],
                    "dataframe": "./local_data/partitions/transferability/covid_test.csv",
                    "base_samples_path": "COVID-19_Radiography_Dataset/"}
+    elif experiment == "covid_train_3class":
+        setting = {"experiment": "covid3class",
+                   "targets": ["Normal", "COVID", "Pneumonia"],
+                   "dataframe": "./local_data/partitions/transferability/covid_train.csv",
+                   "base_samples_path": "COVID-19_Radiography_Dataset/"}
+    elif experiment == "covid_test_3class":
+        setting = {"experiment": "covid3class",
+                   "targets": ["Normal", "COVID", "Pneumonia"],
+                   "dataframe": "./local_data/partitions/transferability/covid_test.csv",
+                   "base_samples_path": "COVID-19_Radiography_Dataset/"}
     elif experiment == "covid_train_4class":
         setting = {"experiment": "covid4class",
                    "targets": ["Normal", "COVID", "Pneumonia", "Lung Opacity"],

@@ -1,20 +1,20 @@
 # C
-python main_pretrain.py --learning_criteria clip --exp_id clip_C --datasets CheXpert-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unicl --exp_id unicl_C --datasets CheXpert-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_C --datasets CheXpert-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_C --datasets CheXpert-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria clip --exp_id clip_C --datasets CheXpert-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unicl --exp_id unicl_C --datasets CheXpert-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_C --datasets CheXpert-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_C --datasets CheXpert-train-frontal --num_workers 4
 # M
-python main_pretrain.py --learning_criteria clip --exp_id clip_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unicl --exp_id unicl_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria clip --exp_id clip_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unicl --exp_id unicl_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_M --datasets MIMIC-CXR-2-train-frontal --num_workers 4
 # C+M
-python main_pretrain.py --learning_criteria clip --exp_id clip_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unicl --exp_id unicl_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria clip --exp_id clip_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unicl --exp_id unicl_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal --num_workers 4
 # C+M+P
-python main_pretrain.py --learning_criteria clip --exp_id clip_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unicl --exp_id unicl_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
-python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria clip --exp_id clip_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unicl --exp_id unicl_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
+#python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CMP --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal,PadChest-train-frontal --num_workers 4
