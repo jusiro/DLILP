@@ -5,7 +5,7 @@ This script contains relative or absolute paths for local data
 """
 
 # Path with datasets
-PATH_DATASETS = "/media/juliosilva/HDETS/LIVIA/Datasets/CXR/"
+PATH_DATASETS = "./local_data/datasets/"
 
 # Path with pretraining and transferability partitions
 PATH_DATAFRAME_PRETRAIN = "./local_data/partitions/pretraining/"
