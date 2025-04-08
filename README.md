@@ -10,7 +10,7 @@
 <br/>
 ÉTS Montréal
 <br/>
-| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](xxx.xxx) | [ArXiv](https://arxiv.org/pdf/xxx.xxx.pdf) | [Code](https://github.com/jusiro/DLILP) |
+| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://arxiv.org/abs/2504.05227) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
 <br/>
 
 ### Summary
