@@ -17,9 +17,9 @@
 
 In this work, we focus on **pre-training large-scale vision models for chest X-ray (CXR) understanding**.
 In this domain, raw datasets naturally present text supervision thanks to medical reports. Nevertheless, only a few
-datasets with such information are available, as **fine-grained label supervision** is the most popular choice. 
+datasets with such information are available, as **fine-grained labels** - obtained from entity extraction methods - are the most popular choice. 
 Nevertheless, current literature is mostly focused on **vision-language pre-training, 
-which might struggle to incorporate label information**, and thus fail to properly scale to integrate more datasets. In contrast, we propose:
+which might struggle to incorporate label information**, and thus fail to scale to integrate more datasets properly. In contrast, we propose:
 
 - **Unimodal pre-training** using image-label information.
 - **Disentangled Language-Image-Label Pre-training**, **DLILP**, which separately aligns  image-text and image-label supervision.
