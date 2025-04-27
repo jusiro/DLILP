@@ -6,9 +6,7 @@
 📜 <span style="color:red">*Information Processing in Medical Imaging*</span> \
 [Julio Silva-Rodríguez](https://scholar.google.es/citations?user=1UMYgHMAAAAJ&hl),
 [Jose Dolz](https://scholar.google.es/citations?user=yHQIFFMAAAAJ&hl),
-[Ismail Ben Ayed](https://scholar.google.es/citations?user=29vyUccAAAAJ&hl)
-<br/>
-ÉTS Montréal
+[Ismail Ben Ayed](https://scholar.google.es/citations?user=29vyUccAAAAJ&hl) ⋅ ÉTS Montréal
 <br/>
 | [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://arxiv.org/abs/2504.05227) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
 <br/>
