@@ -11,8 +11,6 @@
 | [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://arxiv.org/abs/2504.05227) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
 <br/>
 
-### Summary
-
 In this work, we focus on **pre-training large-scale vision models for chest X-ray (CXR) understanding**.
 In this domain, raw datasets naturally present text supervision thanks to medical reports. Nevertheless, only a few
 datasets with such information are available, as **fine-grained labels** - obtained from entity extraction methods - are the most popular choice. 
