@@ -35,6 +35,8 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 pip install git+https://github.com/jusiro/DLILP.git
 ```
 
+---
+
 ### Pre-training, adaptation, and other tasks.
 
 * Clone the repository (for pre-training and transferability):
@@ -126,6 +128,8 @@ python main_transferability.py --experiment chexpert_5x200 --method lp --shots_t
 # CXR-CLIP (MICCAI23)
 python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/cxr-clip.tar
 ```
+
+---
 
 # Citation
 
