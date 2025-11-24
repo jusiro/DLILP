@@ -82,7 +82,7 @@ python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CM --datasets C
 ### Pre-trained weights download
 
 We provide our pre-trained weights in the following [LINK](https://1drv.ms/f/c/012ee12cadd5b31d/Eh2z1a0s4S4ggAFuoAAAAAAB55qMt26nI0kDIgg56XKJNg?e=kYl7IF).
-You can manually download the weights, and store them at: `./cxrvlms/modeling/pretrained_weights/[ID].pth`. They present the following [ID]: "method_dataset",
+You can manually download the weights, and store them at: `./dlilp/modeling/pretrained_weights/[ID].pth`. They present the following [ID]: "method_dataset",
 e.g. dlilp_MCP stands for the pre-training strategy DLILP, using Mimic (M), CheXpert (C) and PadChest (P) datasets.
 
 
@@ -112,21 +112,21 @@ We also have prepared the framework for evaluating the Linear Probing of recent 
 such as image normalization or size might vary. We present some examples of calls below, but additional are incldued at
 [`./local_data/examples/sota.txt`](./local_data/examples/sota.txt). If interested, please refer to [MedKLIP](MedKLIP),
 [KED](KED), [BioVIL](BioVIL), [GlorIA](GlorIA), [MedCLIP](MedCLIP), or [CXR-CLIP](CXR-CLIP) repositories and allocate their
-ResNet-50 weights at [`./cxrvlms/modeling/pretrained_weights/other/`](dlilp/modeling/pretrained_weights/other/).
+ResNet-50 weights at [`./dlilp/modeling/pretrained_weights/other/`](dlilp/modeling/pretrained_weights/other/).
 
 ```
 # MedKLIP (ICCV23)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/medklip.pth
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/medklip.pth
 # KED (Nat.Comm.23)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/KAD.pt
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/KAD.pt
 # BioVIL (Nat.Comm.23)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm False --size 512 --weights_path ./cxrvlms/modeling/pretrained_weights/other/biovil.pt
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm False --size 512 --weights_path ./dlilp/modeling/pretrained_weights/other/biovil.pt
 # GlorIA (ICCV21)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/gloria_weights.ckpt
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/gloria_weights.ckpt
 # MedCLIP (EMNLP22)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/medclip_weights.bin
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/medclip_weights.bin
 # CXR-CLIP (MICCAI23)
-python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./cxrvlms/modeling/pretrained_weights/other/cxr-clip.tar
+python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/cxr-clip.tar
 ```
 
 ---

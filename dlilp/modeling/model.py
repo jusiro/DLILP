@@ -537,7 +537,8 @@ class VLMModel(torch.nn.Module, PyTorchModelHubMixin):
         sizes = image.shape[-2:]
         max_size = max(sizes)
         scale = max_size / self.image_size
-        image = torchvision.transforms.Resize((int(image.shape[-2] / scale), int((image.shape[-1] / scale))))(image)
+        image = torchvision.transforms.Resize((int(image.shape[-2] / scale), int((image.shape[-1] / scale))),
+                                              antialias=False)(image)
         image = torch.nn.functional.pad(image, (0, self.image_size - image.shape[-1], 0, self.image_size - image.shape[-2], 0, 0))
 
         # Set format and device
@@ -644,7 +645,7 @@ class VisionModel(torch.nn.Module):
                 weights = 'IMAGENET1K_V2' if pretrained else None
             else:
                 weights = 'IMAGENET1K_V1' if pretrained else None
-            print("Pretrained weights: " + str(weights))
+            #print("Pretrained weights: " + str(weights))
             self.model = torchvision.models.resnet50(weights=weights)
             # Set number of extracted features
             self.vision_dim = 2048
