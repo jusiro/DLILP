@@ -26,8 +26,18 @@ which might struggle to incorporate label information**, and thus fail to scale 
 ```
 conda create -n dlilp python=3.11 -y
 conda activate dlilp
-conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 ```
+
+* Install DLILP library (only for models usage):
+
+```
+pip install git+https://github.com/jusiro/DLILP.git
+```
+
+### Pre-training, adaptation, and other tasks.
+
+* Clone the repository (for pre-training and transferability):
 
 ```
 git clone https://github.com/jusiro/DLILP.git

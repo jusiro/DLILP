@@ -15,14 +15,17 @@ from .prompts import generate_prompt_ensemble, generate_name_prompt, DESCRIPTION
 from torch.cuda.amp import autocast
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer, logging
+from huggingface_hub import PyTorchModelHubMixin
+
 logging.set_verbosity_error()
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 
 # Device for training/inference
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
-class VLMModel(torch.nn.Module):
+class VLMModel(torch.nn.Module, PyTorchModelHubMixin):
     def __init__(self, vision_type='resnet_v1', bert_type='emilyalsentzer/Bio_ClinicalBERT', vision_pretrained=True,
                  proj_dim=512, proj_bias=False, logit_scale_init_value=0.07, from_checkpoint=True, weights_path=None,
                  out_path=None, image_size=224, caption="A radiology image of [CLS]", projection=True,

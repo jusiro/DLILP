@@ -10,3 +10,4 @@ python-gdcm
 omegaconf
 pytorch-lightning
 transformers
+safetensors
