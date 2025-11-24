@@ -8,7 +8,7 @@ from PIL import Image
 from torchvision.transforms import Resize, Normalize
 from kornia.augmentation import RandomHorizontalFlip, RandomAffine, ColorJitter
 
-from cxrvlms.modeling.constants import *
+from dlilp.modeling.constants import *
 
 BERT_TYPE = 'emilyalsentzer/Bio_ClinicalBERT'
 

@@ -17,7 +17,7 @@ import numpy as np
 from tqdm import tqdm
 from sklearn.linear_model import LogisticRegression
 
-from cxrvlms.pretraining.data.transforms import augmentations_pretraining
+from dlilp.pretraining.data.transforms import augmentations_pretraining
 
 # Device for training/inference
 device = 'cuda' if torch.cuda.is_available() else 'cpu'

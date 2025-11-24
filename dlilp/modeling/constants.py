@@ -1,4 +1,4 @@
-PATH_PRETRAINED_WEIGHTS = "./cxrvlms/modeling/pretrained_weights/"
+PATH_PRETRAINED_WEIGHTS = "./dlilp/modeling/pretrained_weights/"
 
 CATEGORIES = ['adenopathy', 'air trapping', 'alveolar pattern', 'aortic atheromatosis', 'aortic elongation',
               'apical pleural thickening', 'atelectasis', 'bronchiectasis', 'bronchovascular markings', 'bullas',

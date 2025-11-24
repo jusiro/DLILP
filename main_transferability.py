@@ -8,11 +8,11 @@ import os
 
 import torch
 
-from cxrvlms.modeling.model import VLMModel
-from cxrvlms.transferability.data.dataloader import get_dataloader_splits
-from cxrvlms.utils.metrics import evaluate, average_folds_results, save_results
-from cxrvlms.modeling.misc import set_seeds
-from cxrvlms.transferability.modeling.adapters import LinearProbe, ZeroShot
+from dlilp.modeling.model import VLMModel
+from dlilp.transferability.data.dataloader import get_dataloader_splits
+from dlilp.utils.metrics import evaluate, average_folds_results, save_results
+from dlilp.modeling.misc import set_seeds
+from dlilp.transferability.modeling.adapters import LinearProbe, ZeroShot
 
 from local_data.constants import *
 from local_data.experiments import get_experiment_setting
@@ -164,7 +164,7 @@ def main():
     parser.add_argument('--method', default='zero_shot', help='lp - zero_shot')
 
     # Model base weights and architecture
-    parser.add_argument('--weights_path', default='./cxrvlms/modeling/pretrained_weights/unimodal_CM.bin',
+    parser.add_argument('--weights_path', default='./dlilp/modeling/pretrained_weights/unimodal_CM.bin',
                         help='clip_CM - unicl_CM - unimodal_CM - dlilp_CM'
                              'other/medclip_weights.bin - other/cxr-clip.tar - other/gloria_weights.ckpt'
                              'other/medklip.pth - other/biovil.pt - other/KAD.pt')

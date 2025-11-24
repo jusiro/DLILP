@@ -9,9 +9,9 @@ import argparse
 import torch
 torch.multiprocessing.set_start_method('spawn', force=True)
 
-from cxrvlms.pretraining.data.dataloader import get_loader
-from cxrvlms.pretraining.data.transforms import augmentations_pretraining
-from cxrvlms.modeling.model import VLMModel
+from dlilp.pretraining.data.dataloader import get_loader
+from dlilp.pretraining.data.transforms import augmentations_pretraining
+from dlilp.modeling.model import VLMModel
 
 from local_data.constants import *
 

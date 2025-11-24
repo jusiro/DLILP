@@ -10,8 +10,8 @@ import pandas as pd
 from torch.utils.data import DataLoader
 from torchvision.transforms import Compose
 
-from cxrvlms.pretraining.data.dataset import Dataset
-from cxrvlms.pretraining.data.transforms import LoadImage
+from dlilp.pretraining.data.dataset import Dataset
+from dlilp.pretraining.data.transforms import LoadImage
 
 
 def get_dataloader_splits(dataframe_path, data_root_path, targets, shots_train="80%", shots_val="0%", norm=False,

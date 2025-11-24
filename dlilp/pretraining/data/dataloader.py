@@ -14,8 +14,8 @@ from torchvision.transforms import Compose
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from cxrvlms.pretraining.data.dataset import Dataset
-from cxrvlms.pretraining.data.transforms import LoadImage, SelectRelevantKeys, ProduceDescription
+from dlilp.pretraining.data.dataset import Dataset
+from dlilp.pretraining.data.transforms import LoadImage, SelectRelevantKeys, ProduceDescription
 
 
 def get_loader(dataframes_path, data_root_path, datasets, batch_size=8, num_workers=0, banned_categories=None,

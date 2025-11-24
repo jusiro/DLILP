@@ -112,7 +112,7 @@ We also have prepared the framework for evaluating the Linear Probing of recent 
 such as image normalization or size might vary. We present some examples of calls below, but additional are incldued at
 [`./local_data/examples/sota.txt`](./local_data/examples/sota.txt). If interested, please refer to [MedKLIP](MedKLIP),
 [KED](KED), [BioVIL](BioVIL), [GlorIA](GlorIA), [MedCLIP](MedCLIP), or [CXR-CLIP](CXR-CLIP) repositories and allocate their
-ResNet-50 weights at [`./cxrvlms/modeling/pretrained_weights/other/`](./cxrvlms/modeling/pretrained_weights/other/).
+ResNet-50 weights at [`./cxrvlms/modeling/pretrained_weights/other/`](dlilp/modeling/pretrained_weights/other/).
 
 ```
 # MedKLIP (ICCV23)

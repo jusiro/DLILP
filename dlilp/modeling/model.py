@@ -202,7 +202,7 @@ class VLMModel(torch.nn.Module, PyTorchModelHubMixin):
 
         # Set scheduler
         if scheduler:
-            from cxrvlms.pretraining.utils import get_scheduler_per_iteration
+            from dlilp.pretraining.utils import get_scheduler_per_iteration
             scheduler = get_scheduler_per_iteration(optimizer, lr, warmup_epoch, len(datalaoders["train"]))
         else:
             scheduler = None
