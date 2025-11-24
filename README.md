@@ -8,7 +8,7 @@
 [Jose Dolz](https://scholar.google.es/citations?user=yHQIFFMAAAAJ&hl),
 [Ismail Ben Ayed](https://scholar.google.es/citations?user=29vyUccAAAAJ&hl) ⋅ ÉTS Montréal
 <br/>
-| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://arxiv.org/abs/2504.05227) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
+| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://link.springer.com/chapter/10.1007/978-3-031-96625-5_20) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
 <br/>
 
 In this work, we focus on **pre-training large-scale vision models for chest X-ray (CXR) understanding**.
