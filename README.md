@@ -72,7 +72,7 @@ print(probs.round(3))  # [[0.001   0.002  0.963  0.     0.002  0.029  0.003]]
 
 ## Pre-training and transferability
 
-* Clone the repository:
+In the following, we present the scripts for model pre-training and transferability. To use them, we recommend cloning the whole repository.
 
 ```
 git clone https://github.com/jusiro/DLILP.git
