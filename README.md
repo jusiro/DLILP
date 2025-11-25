@@ -41,7 +41,7 @@ pip install git+https://github.com/jusiro/DLILP.git
 from PIL import Image
 import numpy as np
 
-# Import FLAIR
+# Import Chest X-ray VLM
 from dlilp import VLMModel
 
 # Set model
