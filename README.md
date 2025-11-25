@@ -20,7 +20,7 @@ which might struggle to incorporate label information**, and thus fail to scale 
 - **Unimodal pre-training** using image-label information.
 - **Disentangled Language-Image-Label Pre-training**, **DLILP**, which separately aligns  image-text and image-label supervision.
 
-### Install
+## Install DLILP
 
 * Install in your enviroment a compatible torch version with your GPU. For example:
 ```
@@ -29,17 +29,33 @@ conda activate dlilp
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
-* Install DLILP library (only for models usage):
+* Install DLILP library (only for basic models usage):
 
 ```
 pip install git+https://github.com/jusiro/DLILP.git
 ```
 
----
+## Usage
 
-### Pre-training, adaptation, and other tasks.
+```
+from PIL import Image
+import numpy as np
 
-* Clone the repository (for pre-training and transferability):
+# Import FLAIR
+from dlilp import VLMModel
+
+# Set model
+model = VLMModel.from_pretrained("jusiro2/DLILP_CMP")
+
+# Load image and set target categories 
+# (if the repo is not cloned, download the image and change the path!)
+
+image = np.array(Image.open("./local_data/media/sample_bronchopneumonia.png"))
+```
+
+## Pre-training and transferability
+
+* Clone the repository:
 
 ```
 git clone https://github.com/jusiro/DLILP.git
@@ -47,13 +63,13 @@ cd DLILP
 pip install -r requirements.txt
 ```
 
-### Datasets
+### 📦 Datasets
 
 1. **Download datasets**. Please, check [`./local_data/datasets/README.md`](./local_data/datasets/README.md) for expected datasets structure, links, and instructions.
 2. Define the **relative paths for datasets** in [`./local_data/constants.py`](./local_data/constants.py).
 3. Create dataset **partitions** for pre-training and transferability. Follow the instructions at [`./local_data/partitions/README.md`](./local_data/partitions/README.md), and execute `python ./local_data/partitions/partitions.py`.
 
-### Model pre-training
+### 📦 Foundation model pre-training
 
 * Contrastive language-image pretraining - **CLIP**.
 
@@ -79,14 +95,13 @@ python main_pretrain.py --learning_criteria unimodal --exp_id unimodal_CM --data
 python main_pretrain.py --learning_criteria dlilp --exp_id dlilp_CM --datasets CheXpert-train-frontal,MIMIC-CXR-2-train-frontal
 ```
 
-### Pre-trained weights download
+### 📦 Pre-trained weights download
 
 We provide our pre-trained weights in the following [LINK](https://1drv.ms/f/c/012ee12cadd5b31d/Eh2z1a0s4S4ggAFuoAAAAAAB55qMt26nI0kDIgg56XKJNg?e=kYl7IF).
 You can manually download the weights, and store them at: `./dlilp/modeling/pretrained_weights/[ID].pth`. They present the following [ID]: "method_dataset",
 e.g. dlilp_MCP stands for the pre-training strategy DLILP, using Mimic (M), CheXpert (C) and PadChest (P) datasets.
 
-
-### Transferability to downstream tasks/domains
+### 📦 Transferability to downstream tasks/domains
 
 * **Zero-shot**
 
@@ -106,7 +121,7 @@ python main_transferability.py --experiment covid_train --method lp --load_weigh
 python main_transferability.py --experiment rsna_pneumonia_train --method lp --load_weights True --ensemble True --shots_train 16 --shots_test 0% --experiment_test rsna_pneumonia_test --folds 5  
 ```
 
-### Using other pre-trained models
+### 📦 Using other pre-trained models
 
 We also have prepared the framework for evaluating the Linear Probing of recent released models. Note that some details
 such as image normalization or size might vary. We present some examples of calls below, but additional are incldued at
@@ -128,8 +143,6 @@ python main_transferability.py --experiment chexpert_5x200 --method lp --shots_t
 # CXR-CLIP (MICCAI23)
 python main_transferability.py --experiment chexpert_5x200 --method lp --shots_train 16 --shots_test 20% --folds 5 --norm True --size 224 --weights_path ./dlilp/modeling/pretrained_weights/other/cxr-clip.tar
 ```
-
----
 
 # Citation
 
