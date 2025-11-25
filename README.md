@@ -47,6 +47,12 @@ from dlilp import VLMModel
 # Set model
 model = VLMModel.from_pretrained("jusiro2/DLILP_CMP")
 
+# There are several other available weights, with models pre-trained on:
+# CheXpert (C), MIMIC (M), and PadChest (P).
+# "jusiro2/DLILP_CMP" - "jusiro2/DLILP_CM" - "jusiro2/DLILP_M" - "jusiro2/DLILP_C"
+# "jusiro2/CXR_Unimodal_CMP" - "jusiro2/CXR_Unimodal_CM" - ...
+# "jusiro2/CONVIRT". 
+
 # Load image and set target categories 
 # (if the repo is not cloned, download the image and change the path!)
 
