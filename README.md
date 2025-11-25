@@ -8,7 +8,7 @@
 [Jose Dolz](https://scholar.google.es/citations?user=yHQIFFMAAAAJ&hl),
 [Ismail Ben Ayed](https://scholar.google.es/citations?user=29vyUccAAAAJ&hl) ⋅ ÉTS Montréal
 <br/>
-| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://link.springer.com/chapter/10.1007/978-3-031-96625-5_20) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) |
+| [Project](https://jusiro.github.io/projects/dlilp) | [Conference](https://link.springer.com/chapter/10.1007/978-3-031-96625-5_20) | [ArXiv](https://arxiv.org/abs/2504.05227) | [Code](https://github.com/jusiro/DLILP) | [Tutorials](https://colab.research.google.com/drive/1_8Ysd8mCKuLX_Q86e-7pOAHFbSR9F4aZ?usp=sharing) |
 <br/>
 
 In this work, we focus on **pre-training large-scale vision models for chest X-ray (CXR) understanding**.
@@ -50,7 +50,18 @@ model = VLMModel.from_pretrained("jusiro2/DLILP_CMP")
 # Load image and set target categories 
 # (if the repo is not cloned, download the image and change the path!)
 
-image = np.array(Image.open("./local_data/media/sample_bronchopneumonia.png"))
+image = np.array(Image.open("./DLILP/local_data/media/sample_bronchopneumonia.png"))[:,:,0:3]
+text = ["normal", "no finding", "pneumonia", "osteopenia", "calcified adenopathy",
+        "broncho-pneumonia", "opacities"]
+        
+# Forward DLILP model using the visual-textual projection
+model.caption = "[CLS]"
+probs, logits = model(image, text)
+
+print("Image-Text similarities:")
+print(logits.round(3)) # [[ 0.1    1.06   7.399 -0.169  1.337  3.904  1.462]]
+print("Probabilities:")
+print(probs.round(3))  # [[0.001   0.002  0.963  0.     0.002  0.029  0.003]]
 ```
 
 ## Pre-training and transferability
