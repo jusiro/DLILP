@@ -65,9 +65,9 @@ model.caption = "[CLS]"
 probs, logits = model(image, text)
 
 print("Image-Text similarities:")
-print(logits.round(3)) # [[ 0.1    1.06   7.399 -0.169  1.337  3.904  1.462]]
+print(logits.round(3)) # [[ 0.818  1.768  7.617 -1.306  1.051  4.63   5.374]]
 print("Probabilities:")
-print(probs.round(3))  # [[0.001   0.002  0.963  0.     0.002  0.029  0.003]]
+print(probs.round(3))  # [[ 0.001  0.002  0.861  0.     0.001  0.043  0.091]]
 ```
 
 ## Pre-training and transferability
